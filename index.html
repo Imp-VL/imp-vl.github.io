@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+  <link rel="icon" href="images/favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
@@ -436,12 +436,10 @@
     <!-- </div> -->
     <!--/ Results. -->
     <div class="container is-max-desktop">
-
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
             <p>
-
             <ul type="1">
               <li><b>Stage 1: Optimized Model Architectures</b>. <span style="font-size: 95%;"></span></li>
               <ul type="1">
@@ -461,8 +459,6 @@
                   SigLIP as our default visual encoder in the following.
                 </li>
               </ul>
-
-
               <li><b>Stage 2: Improved Training Strategies</b>. <span style="font-size: 95%;">Imp connects pre-trained
                   <a href="https://huggingface.co/google/siglip-so400m-patch14-384">SIGLIP</a> visual encoder and small
                   language model <a href="https://huggingface.co/microsoft/phi-2">Phi-2</a>, using a simple projection
@@ -527,7 +523,60 @@
       </div>
   </section>
 
-
+  <section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Performance</h2>
+      </div>
+    </div>
+  
+  
+  
+    <!-- </div> -->
+    <!--/ Results. -->    
+  <div class="container is-max-desktop">
+  
+  
+    <!-- Grounedtext2img. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Quantitative Comparisons with the State-of-the-art LMMs
+          benchmarks.</span></h2>
+        
+        <div>
+          <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">  <img id="painting_icon" width="98%" src="images/tab4.png"> </a>
+  
+      </div>
+  
+      <p style="font-family:Times New Roman"><b>From the results we can see that Imp-3B and Imp-4B steadily outperform all the existing
+        lightweight LMMs on most benchmarks and even achieve competitive performance with LLaVA-
+        1.5-13B, reflecting the effectiveness of our elaborated model design. Moreover, compared with
+        MiniCPM-V-3B, which uses over 300M training data, Imp-3B is much more data-efficient. This
+        suggests that for lightweight LMMs, the quality of training data is more important than the
+        quantity. Finally, although Imp-2B exhibits consistently worse performance than the rest two
+        Imp models, its performance on the Chinese MMBCN benchmark is prominent. As our training
+        data is purely in English, this phenomenon implies that the bilingual understanding capability
+        of the LLM (i.e., Qwen-1.5) is successfully inherited by the LMM.</b>               
+      </div>
+    </div>
+  
+    <!-- Grounedtext2img. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4"> <img id="painting_icon" width="3%" src="https://scienceqa.github.io/img/logo.png"><span style="font-size: 100%;"> Quantitative Comparisons on Mobile Devices</span></h2>
+        
+        <div>
+          <a href="https://plotly.com/~lichunyuan24/1/?share_key=v4opE3TJpxqQ08RYsDD4iv" target="_blank" title="Plot 1" style="display: block; text-align: center;"><img id="painting_icon" width="98%" src="images/tab5.png"></a>
+          <script data-plotly="lichunyuan24:1" sharekey-plotly="v4opE3TJpxqQ08RYsDD4iv" src="https://plotly.com/embed.js" async></script>
+      </div>
+          <p style="font-family:Times New Roman"><b>To summarize, Imp-3B@196 with 4-bit quantization achieves a good balance in model storage,
+            latency, and capability. We regard it as our default model for the following deployment.</b>
+                
+      </div>
+    </div>
+  </section>
+  
   <section class="section">
 
     <div class="columns is-centered has-text-centered">
