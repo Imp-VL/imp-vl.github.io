@@ -144,25 +144,25 @@
                 <a href="" style="color:#c594d6;font-weight:normal;">Zhenwei Shao</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#008AD7;font-weight:normal;"> Zhou Yu<sup>&#x2020</sup></a>,
+                <a href="" style="color:#c594d6;font-weight:normal;"> Zhou Yu<sup>&#x2020</sup></a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#F2A900;font-weight:normal;"> Jun Yu</a>,
+                <a href="" style="color:#c594d6;font-weight:normal;"> Jun Yu</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#f68946;font-weight:normal;"> Xuecheng Ouyang</a>,
+                <a href="" style="color:#c594d6;font-weight:normal;"> Xuecheng Ouyang</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#f68946;font-weight:normal;"> Lihao Zheng</a>,
+                <a href="" style="color:#c594d6;font-weight:normal;"> Lihao Zheng</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#f68946;font-weight:normal;"> ZhenBiao Gai</a>,
+                <a href="" style="color:#c594d6;font-weight:normal;"> ZhenBiao Gai</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#f68946;font-weight:normal;"> Mingyang Wang</a>,
+                <a href="" style="color:#c594d6;font-weight:normal;"> Mingyang Wang</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#f68946;font-weight:normal;">  Jiajun Ding</a>
+                <a href="" style="color:#c594d6;font-weight:normal;"> Jiajun Ding</a>
               </span>
             </div>
 
@@ -219,7 +219,7 @@
                     <span>Code</span>
                   </a>
                 </span>
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://xmbot.net/imp/" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -227,7 +227,7 @@
                     </span>
                     <span>Demo</span>
                   </a>
-                </span>
+                </span> -->
                 <span class="link-block">
                   <a href="https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
@@ -454,13 +454,14 @@
                   Therefore, we choose Phi-2 as our default LLM for the following model design.
                 </li>
                 <li><b>Choice of the visual encoder. </b> We
-                find that large-scale image-text contrastive
-                learning can facilitate generalization of the visual encoder and obtain more fine-grained visual
-                representations. Moreover,  the synergistic effect results from the improved model capability and the increased number of visual tokens. Therefore, we choose
-                SigLIP as our default visual encoder in the following.
-              </li>
+                  find that large-scale image-text contrastive
+                  learning can facilitate generalization of the visual encoder and obtain more fine-grained visual
+                  representations. Moreover, the synergistic effect results from the improved model capability and the
+                  increased number of visual tokens. Therefore, we choose
+                  SigLIP as our default visual encoder in the following.
+                </li>
               </ul>
-              
+
 
               <li><b>Stage 2: Improved Training Strategies</b>. <span style="font-size: 95%;">Imp connects pre-trained
                   <a href="https://huggingface.co/google/siglip-so400m-patch14-384">SIGLIP</a> visual encoder and small
@@ -541,22 +542,32 @@
             GPT-4 Technical Report</a></h2>
       </div>
     </div> -->
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <!-- <img id="teaser" width="35%" src="images/cmp_ironing.png"> -->
-        <figure style="text-align: center ;">
-          <img id="teaser" width="85%" src="images/fig3.png">
-          <img id="teaser" width="85%" src="images/fig4.png">
-          <img id="teaser" width="85%" src="images/fig5.png">
-          <figcaption>
-        
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <centering>
+            <div class="columns is-centered has-text-centered">
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-six-fifths"
+                  style="display: flex; align-items: flex-start; justify-content: center;">
+                  <!-- <img id="teaser" width="35%" src="images/cmp_ironing.png"> -->
+                  <figure style="text-align: center ;">
+                    <img id="teaser1" width="97%" src="images/fig3.png">
+                    <img id="teaser2" width="97%" src="images/fig4.png">
+                    <img id="teaser3" width="97%" src="images/fig5.png">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </centering>
+        </div>
       </div>
     </div>
+  </section>
 
 
 
-    <!-- <div class="columns is-centered has-text-centered">
+  <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-4">Optical character recognition (OCR)</a></h2>
       </div>
@@ -573,7 +584,7 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <br>TODO</br>  
+      <br>TODO</br>
       <pre><code>
   @misc{liu2023improvedllava,
           author={Liu, Haotian and Li, Chunyuan and Li, Yuheng and Lee, Yong Jae},
