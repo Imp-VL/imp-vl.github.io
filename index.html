@@ -228,7 +228,7 @@
                     <span>Demo</span>
                   </a>
                 </span> -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -236,7 +236,7 @@
                     </span>
                     <span>Dataset</span>
                   </a>
-                </span>
+                </span> -->
                 <span class="link-block">
                   <a href="https://huggingface.co/MILVLG/imp-v1-3b" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
@@ -300,7 +300,7 @@
       <gradio-app src="https://llava.hliu.cc"></gradio-app>
     </div> 
   </section> -->
-  <section class="section" style="background-color:#efeff081">
+  <!-- <section class="section" style="background-color:#efeff081">
     <div class="container is-max-desktop">
       <div class="responsive-iframe-container">
         <iframe src="https://www.bilibili.com/" style="width: 100%; height: 100%;" frameborder="0" allowfullscreen>
@@ -308,10 +308,10 @@
         </iframe>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
-  <section class="section">
+  <section class="hero teaser">
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
@@ -320,117 +320,34 @@
       </div>
     </div>
     <!-- </div> -->
-    <!--/ Results. -->
-    <div class="container is-max-desktop">
-
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <div class="content has-text-justified">
-            <p>
-              Based on LLaVA's original 665K data, we remove the TextCaps dataset in line with and then append 32K
-              OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed
-              instruction-tuning data in total.
-
-              <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
-              <style>
-                table.GeneratedTable {
-                  width: 100%;
-                  background-color: #ffffff;
-                  border-collapse: collapse;
-                  border-width: 2px;
-                  border-color: #c1c4c5;
-                  border-style: solid;
-                  color: #000000;
-                }
-
-                table.GeneratedTable td,
-                table.GeneratedTable th {
-                  border-width: 2px;
-                  border-color: #9b9d9e;
-                  border-style: solid;
-                  padding: 3px;
-                }
-
-                table.GeneratedTable thead {
-                  background-color: #bfbfff;
-                }
-              </style>
-
-              <!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
-            <div class="column is-six-fifths" width="80%">
-              <table class="GeneratedTable">
-                <thead>
-                  <tr>
-                    <th>Data file name</th>
-                    <!-- <th>File Size</th> -->
-                    <th>Used Sample Size</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><a
-                        href="https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/blob/main/llava_v1_5_mix665k.json"></a>LLaVA-1.5
-                      original-665K</td>
-                    <td>643K</td>
-                    <!-- <td></td> -->
-                  </tr>
-                  <tr>
-                    <td><a href="https://github.com/kushalkafle/DVQA_dataset"></a>DVQA</td>
-                    <td>10K</td>
-                    <!-- <td></td> -->
-                  </tr>
-                  <tr>
-                    <td><a href="https://huggingface.co/datasets/ahmed-masry/ChartQA"></a>ChartQA</td>
-                    <td>4K</td>
-                    <!-- <td></td> -->
-                  </tr>
-                  <tr>
-                    <td><a
-                        href="https://paperswithcode.com/paper/docvqa-a-dataset-for-vqa-on-document-images"></a>DocVQA
-                    </td>
-                    <td>10K</td>
-                    <!-- <td></td> -->
-                  </tr>
-                  <tr>
-                    <td><a href="https://allenai.org/data/diagrams"></a>AI2D</td>
-                    <td>4K</td>
-                    <!-- <td></td> -->
-                  </tr>
-                  <tr>
-                    <td><a href="https://www.docvqa.org/datasets/infographicvqa"></a>InfographicVQA</td>
-                    <td>4K</td>
-                    <!-- <td></td> -->
-                  </tr>
-                  <tr>
-                    <td><a href="https://huggingface.co/datasets/Lin-Chen/ShareGPT4V"></a>ShareGPT-4V</td>
-                    <td>20K</td>
-                    <!-- <td></td> -->
-                  </tr>
-                  <tr>
-                    <td><a href="https://huggingface.co/datasets/laion/gpt4v-dataset"></a>LAION-GPT-V</td>
-                    <td>10K</td>
-                    <!-- <td></td> -->
-                  </tr>
-                  <tr>
-                    <td><a href="https://huggingface.co/datasets/FreedomIntelligence/ALLaVA-4V"></a>ALLaVA</td>
-                    <td>300K</td>
-                    <!-- <td></td> -->
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-            <!-- Codes by Quackit.com -->
+              <div class="container is-max-desktop">
+                <!-- Grounedtext2img. -->
+                <div class="columns is-centered">
+                  <div class="column is-full-width">
+                    <!-- <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Quantitative Comparisons with the State-of-the-art LMMs
+                      benchmarks.</span></h2> -->
+                    
+                    <div>
+                      <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">  <img id="painting_icon" width="98%" src="images/tab2.png"> </a>
+              
+                  </div>
+              
+                  <p style="font-family:Times New Roman"><b>Based on LLaVA's original 665K data, we remove the TextCaps dataset in line with and then append 32K
+                    OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed
+                    instruction-tuning data in total.</b>               
+                  </div>
+                </div>
+              
 
   </section>
 
 
-  <section class="section">
+  <section class="hero teaser">
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-3"><img id="painting_icon" width="3%"
-            src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Imp</h2>
+            src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> A Roadmap from LLaVA to Imp</h2>
       </div>
     </div>
     <!-- </div> -->
@@ -439,9 +356,11 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
+            <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Optimized Model Architectures</span></h2>
             <p>
-            <ul type="1">
-              <li><b>Stage 1: Optimized Model Architectures</b>. <span style="font-size: 95%;"></span></li>
+              
+            <!-- <ul type="1">
+              <li><b>Stage 1: Optimized Model Architectures</b>. <span style="font-size: 95%;"></span></li> -->
               <ul type="1">
                 <li><b>Choice of the LLM. </b> We
                   find that the LMM's performance is highly de-
@@ -459,7 +378,8 @@
                   SigLIP as our default visual encoder in the following.
                 </li>
               </ul>
-              <li><b>Stage 2: Improved Training Strategies</b>. <span style="font-size: 95%;">Imp connects pre-trained
+              <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Improved Training Strategies</span></h2>
+               <span style="font-size: 95%;">Imp connects pre-trained
                   <a href="https://huggingface.co/google/siglip-so400m-patch14-384">SIGLIP</a> visual encoder and small
                   language model <a href="https://huggingface.co/microsoft/phi-2">Phi-2</a>, using a simple projection
                   matrix. We follow LLaVA two-stage instruction-tuning procedure, but changed part of it by exploring.
@@ -523,7 +443,7 @@
       </div>
   </section>
 
-  <section class="section">
+  <section class="hero teaser">
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
@@ -577,7 +497,7 @@
     </div>
   </section>
   
-  <section class="section">
+  <section class="hero teaser">
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
@@ -614,7 +534,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="hero teaser">
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
@@ -666,7 +586,7 @@
       </div>
     </div> -->
 
-  <section class="section" id="BibTeX">
+  <section class="hero teaser" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <br>TODO</br>
@@ -688,7 +608,7 @@
     </div>
   </section>
 
-  <section class="section" id="Acknowledgement">
+  <section class="hero teaser" id="Acknowledgement">
     <div class="container is-max-desktop content">
       <h2 class="title">Acknowledgement</h2>
       <p>
