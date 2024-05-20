@@ -315,8 +315,8 @@
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="3%"
-            src="https://cdn-icons-png.flaticon.com/512/5886/5886212.png"> Multimodal Instrucion-Following Data</h2>
+        <h2 class="title is-3">
+           Multimodal Instrucion-Following Data</h2>
       </div>
     </div>
     <!-- </div> -->
@@ -332,12 +332,10 @@
               
                   </div>
               
-                  <p style="font-family:Times New Roman"><b>Based on LLaVA's original 665K data, we remove the TextCaps dataset in line with and then append 32K
-                    OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed
-                    instruction-tuning data in total.</b>               
+                  <p style="font-family:Times New Roman"><b>Based on LLaVA's original 665K dataset, we remove the 22K TextCaps dataset which uses the same set of training images as TextVQA. This allows us to better evaluate the zero-shot performance on the TextVQA benchmark. Meanwhile, we append 32K OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed instruction-tuning data in total. </b>               
                   </div>
                 </div>
-              
+              <br>
 
   </section>
 
@@ -346,8 +344,7 @@
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="3%"
-            src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> A Roadmap from LLaVA to Imp</h2>
+        <h2 class="title is-3"> A Roadmap from LLaVA to Imp</h2>
       </div>
     </div>
     <!-- </div> -->
@@ -356,7 +353,7 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Optimized Model Architectures</span></h2>
+            <h2 class="title is-4"> <span style="font-size: 100%;"> Optimized Model Architectures</span></h2>
             <p>
               
             <!-- <ul type="1">
@@ -378,7 +375,7 @@
                   SigLIP as our default visual encoder in the following.
                 </li>
               </ul>
-              <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Improved Training Strategies</span></h2>
+              <h2 class="title is-4"> <span style="font-size: 100%;"> Improved Training Strategies</span></h2>
                <span style="font-size: 95%;">Imp connects pre-trained
                   <a href="https://huggingface.co/google/siglip-so400m-patch14-384">SIGLIP</a> visual encoder and small
                   language model <a href="https://huggingface.co/microsoft/phi-2">Phi-2</a>, using a simple projection
@@ -441,13 +438,14 @@
           </centering>
         </div>
       </div>
+      <br>
   </section>
 
   <section class="hero teaser">
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Performance</h2>
+        <h2 class="title is-3"> Performance</h2>
       </div>
     </div>
   
@@ -461,7 +459,7 @@
     <!-- Grounedtext2img. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Quantitative Comparisons with the State-of-the-art LMMs
+        <h2 class="title is-4"> <span style="font-size: 100%;"> Quantitative Comparisons with the State-of-the-art LMMs
           benchmarks.</span></h2>
         
         <div>
@@ -484,7 +482,7 @@
     <!-- Grounedtext2img. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-4"> <img id="painting_icon" width="3%" src="https://scienceqa.github.io/img/logo.png"><span style="font-size: 100%;"> Quantitative Comparisons on Mobile Devices</span></h2>
+        <h2 class="title is-4"> <span style="font-size: 100%;"> Quantitative Comparisons on Mobile Devices</span></h2>
         
         <div>
           <a href="https://plotly.com/~lichunyuan24/1/?share_key=v4opE3TJpxqQ08RYsDD4iv" target="_blank" title="Plot 1" style="display: block; text-align: center;"><img id="painting_icon" width="98%" src="images/tab5.png"></a>
@@ -495,6 +493,7 @@
                 
       </div>
     </div>
+    <br>
   </section>
   
   <section class="hero teaser">
@@ -532,6 +531,7 @@
         </div>
       </div>
     </div>
+    <br><br>
   </section>
 
   <section class="hero teaser">
@@ -569,6 +569,7 @@
           </div>
         </div>
       </div> 
+      <br><br>
   </section>
 
 
@@ -606,6 +607,7 @@
   }
   </code></pre>
     </div>
+    <br>
   </section>
 
   <section class="hero teaser" id="Acknowledgement">
