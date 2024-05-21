@@ -301,9 +301,8 @@
           <br><br> -->
           We present a family of highly capable yet lightweight LMMs named Imp with models of 2B, 3B, and 4B, which is a gift from our systematic study for lightweight LMMs from the aspects of model architecture, training strategy, and training data. 
           (<i><u>Note: The model series presented in the paper is named as Imp-v1.5 in the Huggingface hub to distinguish it from our earlier released version, Imp-v1</u></i>.) 
-          Imp-3B model steadily outperforms all the existing lightweight
-          LMMs of similar size, and even surpasses the state-of-the-art LMMs at the 13B scale. With
-          low-bit quantization and resolution reduction techniques, our Imp model can be deployed on mobile devices with a high inference speed.
+          Imp models steadily outperform the existing lightweight
+          LMMs of similar size on most benchmarks, and even surpass the state-of-the-art LMMs at the 13B scale. With low-bit quantization and resolution reduction techniques, our Imp models can be deployed on mobile devices with a high inference speed.
         </h4>
       </div>
     </div>
@@ -331,7 +330,7 @@
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"> A Roadmap from LLaVA to Imp</h2>
+        <h2 class="title is-3"> A Roadmap from LLaVA-1.5 to Imp</h2>
       </div>
     </div>
     <!-- </div> -->
@@ -347,43 +346,31 @@
               <li><b>Stage 1: Optimized Model Architectures</b>. <span style="font-size: 95%;"></span></li> -->
               <ul type="1">
                 <li><b>Choice of the LLM. </b> We
-                  find that the LMM's performance is highly de-
-                  pendent on its supporting LLM, and the capability
-                  of larger LLMs usually outperforms smaller ones
-                  according to the scaling law. What's more, the superiority of Phi-2 due to its meticulously organized
-                  training data.
-                  Therefore, we choose Phi-2 as our default LLM for the following model design.
+                  find that the LMM's performance is highly dependent on its supporting LLM. Simply replacing the LLM with a more lightweight one leads to worse performance.
+                  What's more, conditioning on the same model scale, <a href="https://huggingface.co/microsoft/phi-2">Phi-2</a> is superior to other choices, like MobileLLaMA, due to its meticulously organized training data.
                 </li>
-                <li><b>Choice of the visual encoder. </b> We
-                  find that large-scale image-text contrastive
-                  learning can facilitate generalization of the visual encoder and obtain more fine-grained visual
-                  representations. Moreover, the synergistic effect results from the improved model capability and the
-                  increased number of visual tokens. Therefore, we choose
-                  SigLIP as our default visual encoder in the following.
+                <li><b>Choice of the visual encoder. </b> 
+                  A stronger visual encoder would yield a LMM with better vision-language capabilities.
+                  We verify that visual encoders trained with vision-language contrastive
+                  learning can obtain better visual
+                  representations than those pre-trained with ImageNet classification. We choose a strong visual encoder, <a href="https://huggingface.co/google/siglip-so400m-patch14-384">SigLIP-SO/400M</a>, as the visual encoder.
                 </li>
               </ul>
               <h2 class="title is-4"> <span style="font-size: 100%;"> Improved Training Strategies</span></h2>
-               <span style="font-size: 95%;">Imp connects pre-trained
-                  <a href="https://huggingface.co/google/siglip-so400m-patch14-384">SIGLIP</a> visual encoder and small
-                  language model <a href="https://huggingface.co/microsoft/phi-2">Phi-2</a>, using a simple projection
-                  matrix. We follow LLaVA two-stage instruction-tuning procedure, but changed part of it by exploring.
+               <span style="font-size: 95%;">We follow LLaVA-1.5's two-stage training procedure, while exploring training strategies for lightweight LMMs.
                   As the first stage only acts as an initialization, it is of less importance compared to the second
-                  stage. Therefore, we maintain the first-stage training settings in LLaVA.
+                  stage. Therefore, we maintain the first-stage training settings in LLaVA-1.5.
                   <ul type="1">
                     <li><b>Finetuning mechanism.</b> We observe that the model trained with full-parameter funetuning
-                      is inferior to the models with LoRA finetuning while requiring much more GPU memory.
-                      Therefore, we use LoRA finetuning as our training mechanism for the second stage.For
-                      LoRA finetuning, increasing rank from 128 to 256 brings a 0.2 point average score improvement,
-                      while further increasing it to 512 leads to a 0.1 point decrease.
+                      is inferior to the models with LoRA finetuning.
+                      For LoRA finetuning, increasing rank from 128 to 256 brings a 0.2 point average score improvement,
+                      while further increasing it to 512 leads to a 0.1 point decrease. Therefore, we finetune the LMMs with LoRA of rank 256.
                     <li><b>Number of training epochs.</b> Increasing training epochs from 1 to 2 brings a 0.5 point
                       improvement in average score. Meanwhile, further increasing training epochs from 2 to 3
-                      leads to a 0.4 point decrease. Because of these, we set the number of training epochs to 2 in the
-                      following explorations.
+                      leads to a 0.4 point decrease. Because of these, we set the number of training epochs to 2.
                 </span></li>
             </ul>
             </ul>
-            Please check out our
-            <a href="https://github.com/haotian-liu/LLaVA/blob/main/docs/MODEL_ZOO.md">[Model Zoo]</a>.
             </p>
           </div>
           <centering>
@@ -393,19 +380,19 @@
                 <figure style="text-align: center ;">
                   <img id="teaser" width="100%" src="images/fig1a.png">
                   <figcaption>
-                    LLaVA Model architecture
+                    LLaVA-1.5's Model architecture
                   </figcaption>
                 </figure>
                 <figure style="text-align: center ;">
                   <img id="teaser" width="100%" src="images/fig1b.png">
                   <figcaption>
-                    LLaVA Training recipe
+                    LLaVA-1.5's Training recipe
                   </figcaption>
                 </figure>
                 <figure style="text-align: center;">
                   <img id="teaser" width="73%" src="images/fig2.png">
                   <figcaption>
-                    Detailed Roadmap
+                    A Roadmap from LLaVA-1.5 to Imp
                   </figcaption>
                 </figure>
                 <!-- <figure style="text-align: match-parent ;">
@@ -433,23 +420,24 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-3">
-           Multimodal Instrucion-Following Data</h2>
+          Augmented Instrucion-following Data</h2>
       </div>
     </div>
     <!-- </div> -->
               <div class="container is-max-desktop">
                 <!-- Grounedtext2img. -->
+                Based on LLaVA's original 665K dataset, we remove the 22K TextCaps dataset which uses the same set of training images as TextVQA to ensure more strict zero-shot evaluation. Meanwhile, we append 32K OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed vision-language instruction-tuning data in total. </br>
                 <div class="columns is-centered">
                   <div class="column is-full-width">
                     <!-- <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Quantitative Comparisons with the State-of-the-art LMMs
                       benchmarks.</span></h2> -->
                     
                     <div>
-                      <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">  <img id="painting_icon" width="98%" src="images/tab2.png"> </a>
+                      <!-- <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">   -->
+                        <img id="painting_icon" width="98%" src="images/tab2.png"> </a>
               
                   </div>
-              
-                  <p style="font-family:Times New Roman"><b>Based on LLaVA's original 665K dataset, we remove the 22K TextCaps dataset which uses the same set of training images as TextVQA. This allows us to better evaluate the zero-shot performance on the TextVQA benchmark. Meanwhile, we append 32K OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed instruction-tuning data in total. </b>               
+                  Training on this augmented instrucion-following dataset, we further improve the performance of the lightweight LMMs.
                   </div>
                 </div>
               <br>
@@ -479,19 +467,22 @@
           benchmarks.</span></h2>
         
         <div>
-          <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">  <img id="painting_icon" width="98%" src="images/tab4.png"> </a>
+          <!-- <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">   -->
+            <img id="painting_icon" width="98%" src="images/tab4.png"> </a>
   
-      </div>
+        </div>
   
-      <p style="font-family:Times New Roman"><b>From the results we can see that Imp-3B and Imp-4B steadily outperform all the existing
+      We compare Imp models with state-of-the-art models on 10 commonly-used benchmarks.
+      Imp-3B and Imp-4B steadily outperform all the existing
         lightweight LMMs on most benchmarks and even achieve competitive performance with LLaVA-
-        1.5-13B, reflecting the effectiveness of our elaborated model design. Moreover, compared with
+        1.5-13B, reflecting the effectiveness of our elaborated model design. 
+        <!-- Moreover, compared with
         MiniCPM-V-3B, which uses over 300M training data, Imp-3B is much more data-efficient. This
         suggests that for lightweight LMMs, the quality of training data is more important than the
         quantity. Finally, although Imp-2B exhibits consistently worse performance than the rest two
         Imp models, its performance on the Chinese MMBCN benchmark is prominent. As our training
         data is purely in English, this phenomenon implies that the bilingual understanding capability
-        of the LLM (i.e., Qwen-1.5) is successfully inherited by the LMM.</b>               
+        of the LLM (i.e., Qwen-1.5) is successfully inherited by the LMM. -->
       </div>
     </div>
   
@@ -501,11 +492,14 @@
         <h2 class="title is-4"> <span style="font-size: 100%;"> Quantitative Comparisons on Mobile Devices</span></h2>
         
         <div>
-          <a href="https://plotly.com/~lichunyuan24/1/?share_key=v4opE3TJpxqQ08RYsDD4iv" target="_blank" title="Plot 1" style="display: block; text-align: center;"><img id="painting_icon" width="98%" src="images/tab5.png"></a>
+          <!-- <a href="https://plotly.com/~lichunyuan24/1/?share_key=v4opE3TJpxqQ08RYsDD4iv" target="_blank" title="Plot 1" style="display: block; text-align: center;"> -->
+            <img id="painting_icon" width="98%" src="images/tab5.png">
+          </a>
           <script data-plotly="lichunyuan24:1" sharekey-plotly="v4opE3TJpxqQ08RYsDD4iv" src="https://plotly.com/embed.js" async></script>
       </div>
-          <p style="font-family:Times New Roman"><b>To summarize, Imp-3B@196 with 4-bit quantization achieves a good balance in model storage,
-            latency, and capability. We regard it as our default model for the following deployment.</b>
+      We conduct experiments of running Imp-3B on different hardware platforms, especially mobile devices. We explore the techniques of model quantization and image resolution reduction. To summarize,
+           Imp-3B@196 with 4-bit quantization achieves a good balance in model storage,
+            latency, and capability. We regard it as our default model for the deployment.
                 
       </div>
     </div>
@@ -554,17 +548,14 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"> ImpChat: LMM Assistants on Multiple Platforms</h2>
-      </div>
+        <h2 class="title is-3">ImpChat: LMM Assistants on Multiple Platforms</h2>
+      </div>  
     </div>
-  
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-six-fifths">
-           <h2 class="title is-4">The UI demonstrations of ImpChat on multiple platforms.</a></h2>
-        </div>
-        </div> 
-      </div>
-      </div> 
+    
+    <!-- <div class="columns is-centered"> -->
+    <div class="container is-max-desktop content">
+        <p>We have developed a software suite of conversational AI interfaces named ImpChat, which is dedicated to providing users with an easy-to-use LMM assistant. Following is the UI demonstrations of ImpChat on multiple platforms. </p>
+    </div>
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
