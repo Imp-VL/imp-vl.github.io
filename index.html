@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Visual Instruction Tuning">
+  <meta name="description" content="Highly Capable Large Multimodal Models for Mobile Devices">
   <meta name="keywords" content="multimodal chatbot">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Imp</title>
@@ -141,28 +141,28 @@
             <!-- <h5 class="subtitle is-5 publication-awards">NeurIPS 2023 (Oral)</h5> -->
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="" style="color:#c594d6;font-weight:normal;">Zhenwei Shao</a>,
+                <a style="color:#c594d6;font-weight:normal;">Zhenwei Shao</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#c594d6;font-weight:normal;"> Zhou Yu<sup>&#x2020</sup></a>,
+                <a style="color:#c594d6;font-weight:normal;"> Zhou Yu<sup>&#x2020</sup></a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#c594d6;font-weight:normal;"> Jun Yu</a>,
+                <a style="color:#c594d6;font-weight:normal;"> Jun Yu</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#c594d6;font-weight:normal;"> Xuecheng Ouyang</a>,
+                <a style="color:#c594d6;font-weight:normal;"> Xuecheng Ouyang</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#c594d6;font-weight:normal;"> Lihao Zheng</a>,
+                <a style="color:#c594d6;font-weight:normal;"> Lihao Zheng</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#c594d6;font-weight:normal;"> ZhenBiao Gai</a>,
+                <a style="color:#c594d6;font-weight:normal;"> ZhenBiao Gai</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#c594d6;font-weight:normal;"> Mingyang Wang</a>,
+                <a style="color:#c594d6;font-weight:normal;"> Mingyang Wang</a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#c594d6;font-weight:normal;"> Jiajun Ding</a>
+                <a style="color:#c594d6;font-weight:normal;"> Jiajun Ding</a>
               </span>
             </div>
 
@@ -203,7 +203,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2405.12107" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -220,14 +220,36 @@
                   </a>
                 </span>
                 <span class="link-block">
+                  <a href="https://huggingface.co/MILVLG/imp-v1-3b" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-download"></i>
+                    </span>
+                    <span>Models</span>
+                  </a>
+                </span>
+                <span class="link-block">
                   <!-- <a href="https://xmbot.net/imp/" target="_blank" -->
-                  <a href="https://github.com/ricar0/mlc-imp" target="_blank"
+                  <a href="https://xmbot.net/imp/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-desktop"></i>
+                      <!-- <i class="fas fa-robot"></i> -->
+                    </span>
+                    <span>Demo</span>
+                    <!-- <span>ImpChat</span> -->
+                  </a>
+                </span>
+                <span class="link-block">
+                  <!-- <a href="https://xmbot.net/imp/" target="_blank" -->
+                  <a href="https://github.com/MILVLG/mlc-imp" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-mobile"></i>
+                      <!-- <i class="fas fa-robot"></i> -->
                     </span>
-                    <!-- <span>Demo</span> -->
-                    <span>ImpChat</span>
+                    <span>Mobile</span>
+                    <!-- <span>ImpChat</span> -->
                   </a>
                 </span>
                 <!-- <span class="link-block">
@@ -239,15 +261,6 @@
                     <span>Dataset</span>
                   </a>
                 </span> -->
-                <span class="link-block">
-                  <a href="https://huggingface.co/MILVLG/imp-v1-3b" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-share-square"></i>
-                    </span>
-                    <span>Model</span>
-                  </a>
-                </span>
 
 
 
@@ -286,12 +299,11 @@
         <h4 class="subtitle has-text-centered">
           <!-- 🔥<span style="color: #ff3860">[NEW!]</span> LLaVA-1.5 achieves SoTA on 11 benchmarks, with just simple modifications to the original LLaVA, utilizes all public data, completes training in ~1 day on a single 8-A100 node, and surpasses methods that use billion-scale data.
           <br><br> -->
-          We conduct a systematic study for lightweight LMMs from the aspects of model architecture, training strategy,
-          and
-          training data. Imp-3B model steadily outperforms all the existing lightweight
+          We present a family of highly capable yet lightweight LMMs named Imp with models of 2B, 3B, and 4B, which is a gift from our systematic study for lightweight LMMs from the aspects of model architecture, training strategy, and training data. 
+          (<i><u>Note: The model series presented in the paper is named as Imp-v1.5 in the Huggingface hub to distinguish it from our earlier released version, Imp-v1</u></i>.) 
+          Imp-3B model steadily outperforms all the existing lightweight
           LMMs of similar size, and even surpasses the state-of-the-art LMMs at the 13B scale. With
-          low-bit quantization and resolution reduction techniques, our Imp model can be deployed on a
-          Qualcomm Snapdragon 8Gen3 mobile chip with a high inference speed.
+          low-bit quantization and resolution reduction techniques, our Imp model can be deployed on mobile devices with a high inference speed.
         </h4>
       </div>
     </div>
@@ -313,33 +325,6 @@
   </section> -->
 
 
-  <section class="hero teaser">
-    <!-- Results. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3">
-           Multimodal Instrucion-Following Data</h2>
-      </div>
-    </div>
-    <!-- </div> -->
-              <div class="container is-max-desktop">
-                <!-- Grounedtext2img. -->
-                <div class="columns is-centered">
-                  <div class="column is-full-width">
-                    <!-- <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Quantitative Comparisons with the State-of-the-art LMMs
-                      benchmarks.</span></h2> -->
-                    
-                    <div>
-                      <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">  <img id="painting_icon" width="98%" src="images/tab2.png"> </a>
-              
-                  </div>
-              
-                  <p style="font-family:Times New Roman"><b>Based on LLaVA's original 665K dataset, we remove the 22K TextCaps dataset which uses the same set of training images as TextVQA. This allows us to better evaluate the zero-shot performance on the TextVQA benchmark. Meanwhile, we append 32K OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed instruction-tuning data in total. </b>               
-                  </div>
-                </div>
-              <br>
-
-  </section>
 
 
   <section class="hero teaser">
@@ -442,6 +427,35 @@
       </div>
       <br>
   </section>
+
+  <section class="hero teaser">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">
+           Multimodal Instrucion-Following Data</h2>
+      </div>
+    </div>
+    <!-- </div> -->
+              <div class="container is-max-desktop">
+                <!-- Grounedtext2img. -->
+                <div class="columns is-centered">
+                  <div class="column is-full-width">
+                    <!-- <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;"> Quantitative Comparisons with the State-of-the-art LMMs
+                      benchmarks.</span></h2> -->
+                    
+                    <div>
+                      <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">  <img id="painting_icon" width="98%" src="images/tab2.png"> </a>
+              
+                  </div>
+              
+                  <p style="font-family:Times New Roman"><b>Based on LLaVA's original 665K dataset, we remove the 22K TextCaps dataset which uses the same set of training images as TextVQA. This allows us to better evaluate the zero-shot performance on the TextVQA benchmark. Meanwhile, we append 32K OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed instruction-tuning data in total. </b>               
+                  </div>
+                </div>
+              <br>
+
+  </section>
+
 
   <section class="hero teaser">
     <!-- Results. -->
@@ -592,21 +606,13 @@
   <section class="hero teaser" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <br>TODO</br>
       <pre><code>
-  @misc{liu2023improvedllava,
-          author={Liu, Haotian and Li, Chunyuan and Li, Yuheng and Lee, Yong Jae},
-          title={Improved Baselines with Visual Instruction Tuning}, 
-          publisher={arXiv:2310.03744},
-          year={2023},
-  }
-
-  @inproceedings{liu2023llava,
-    author      = {Liu, Haotian and Li, Chunyuan and Wu, Qingyang and Lee, Yong Jae},
-    title       = {Visual Instruction Tuning},
-    booktitle   = {NeurIPS},
-    year        = {2023}
-  }
+@article{imp2024,
+  title={Imp: Highly Capable Large Multimodal Models for Mobile Devices},
+  author={Shao, Zhenwei and Yu, Zhou and Yu, Jun and Ouyang, Xuecheng and Lihao, Zheng and Zhenbiao, Gai and Mingyang, Wang and Jiajun, Ding},
+  journal={arXiv preprint arXiv:2405.12107},
+  year={2024}
+}
   </code></pre>
     </div>
     <br>
