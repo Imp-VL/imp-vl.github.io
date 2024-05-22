@@ -327,7 +327,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <!-- <h2 class="title is-3">  -->
-          <h2 class="title is-3"><img id="painting_icon" width="3%" src="static/images/puzzle.png"> A Roadmap from LLaVA-1.5 to Imp</h2>
+          <h2 class="title is-3"><img id="painting_icon" width="3%" src="static/images/roadmap.png"> A Roadmap from LLaVA-1.5 to Imp</h2>
       </div>
     </div>
     <!-- </div> -->
@@ -336,6 +336,13 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
+            <p>The development of highly capable language models like LLaVA-1.5 has demonstrated the potential of leveraging large-scale curated datasets to achieve impressive performance in various natural language understanding and generation tasks. LLaVA-1.5, a 7 billion parameter language model, exemplifies this by achieving state-of-the-art results through a sophisticated architecture and extensive training regimen.
+
+              However, deploying such large models in real-world applications often poses challenges related to computational resource constraints and latency requirements. To address these issues, there is a pressing need to explore more efficient models that can maintain competitive performance while being more resource-friendly.
+              
+              Our research is driven by the need to bridge this gap. We aim to develop a smaller yet highly capable model, derived from LLaVA-1.5, that can offer similar benefits in a more efficient manner. Specifically, we introduce the Imp-3B model, a streamlined version of LLaVA-1.5, designed to retain the advantages of its larger predecessor while being more suitable for practical deployment.
+              
+              This study meticulously examines the design space of language models, focusing on model architecture, training strategies, and data utilization to mitigate the performance degradation typically associated with model downsizing. Through a comprehensive analysis and a detailed roadmap, we illustrate how to achieve an optimal balance between model size and capability, ultimately contributing to the advancement of accessible and efficient language modeling.</p>
             <h2 class="title is-4"> <span style="font-size: 100%;">1. Optimized Model Architectures</span></h2>
             <p>
 
@@ -354,7 +361,7 @@
                 </li>
               </ul>
               <h2 class="title is-4"> <span style="font-size: 100%;">2. Improved Training Strategies</span></h2>
-               <span style="font-size: 95%;">We follow LLaVA-1.5's two-stage training procedure, while exploring training strategies for lightweight LMMs.
+               <span style="font-size: 100%;">We follow LLaVA-1.5's two-stage training procedure, while exploring training strategies for lightweight LMMs.
                   As the first stage only acts as an initialization, it is of less importance compared to the second
                   stage. Therefore, we maintain the first-stage training settings in LLaVA-1.5.
                   <ul type="1">
@@ -377,19 +384,19 @@
                 <figure style="text-align: center ;">
                   <img id="teaser" width="100%" src="images/fig1a.png">
                   <figcaption>
-                    LLaVA-1.5's Model architecture
+                    Figure 1(a). LLaVA-1.5's Model architecture
                   </figcaption>
                 </figure>
                 <figure style="text-align: center ;">
                   <img id="teaser" width="100%" src="images/fig1b.png">
                   <figcaption>
-                    LLaVA-1.5's Training recipe
+                    Figure 1(b). LLaVA-1.5's Training recipe
                   </figcaption>
                 </figure>
                 <figure style="text-align: center;">
                   <img id="teaser" width="73%" src="images/fig2.png">
                   <figcaption>
-                    A Roadmap from LLaVA-1.5 to Imp
+                    Figure 2. A Roadmap from LLaVA-1.5 to Imp
                   </figcaption>
                 </figure>
                 <!-- <figure style="text-align: match-parent ;">
@@ -410,13 +417,25 @@
           <br>
           <div class="content has-text-justified">
             <h2 class="title is-4"> <span style="font-size: 100%;">3. Augmented Instrucion-following Data</span></h2>
-            <p>
-              Based on LLaVA's original 665K dataset, we remove the 22K TextCaps dataset which uses the same set of training images as TextVQA to ensure more strict zero-shot evaluation. Meanwhile, we append 32K OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed vision-language instruction-tuning data in total. </br>
-              <img id="painting_icon" width="98%" src="images/tab2.png">
+            <p> We remove the 22K TextCaps dataset which uses the same set of training images as TextVQA to ensure more strict zero-shot evaluation. Training on this augmented instrucion-following dataset, we further improve the performance of the lightweight LMMs. </p>  
+           
+              <!-- <figure style="text-align: center;">
+                <img id="painting_icon" width="100%" src="images/tab2.png">
+              <figcaption>
+                Table 1. A Roadmap from LLaVA-1.5 to Imp
+              </figcaption>
+            </figure>    -->
+              
+    
+                <img id="painting_icon" width="99%" src="images/tab2.png">
+
+                Table 1. Statistical information of the instruction tuning dataset for Imp. Based on LLaVA's original 665K data, we remove the TextCaps dataset in line with and then append about 32K OCR & chart-oriented datasets and 330K GPT4V-annotated datasets, resulting in 1M mixed instruction-tuning data in total.
+
+            
+              
             </div>
-            Training on this augmented instrucion-following dataset, we further improve the performance of the lightweight LMMs.
             </div>
-            </p>
+           
           </div>
         
         </div>
@@ -442,15 +461,16 @@
       <div class="column is-full-width">
         <h2 class="title is-4"> <span style="font-size: 100%;"> Quantitative Comparisons with the State-of-the-art LMMs</span></h2>
         
-        <div>
+        <div><p>We apply these design choices to different lightweight LLMs, namely, Qwen-1.5 (1.8B), Phi-2 (2.7B), and Phi-3 (3.8B), to obtain a family of lightweight LMMs Imp-2B/3B/4B. We compare Imp models with state-of-the-art models on 10 commonly-used benchmarks.
+          Imp-3B and Imp-4B steadily outperform all the existing
+          lightweight LMMs on most benchmarks and even achieve competitive performance with LLaVA-
+          1.5-13B, reflecting the effectiveness of our elaborated model design. </p>
+          
           <!-- <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">   -->
-            <img id="painting_icon" width="98%" src="images/tab4.png"> </a>
-  
+          <img id="painting_icon" width="99%" src="images/tab4.png"> </a>
+          Table 2. Comparison of our Imp models (with purple backgrounds) and open-sourced stateof-the-art LMMs on ten commonly-used VQA and LMM benchmarks. #PT and #FT denote the number of pretrainng and instruction-tuning samples, respectively. Benchmark names are abbreviated due to space limits: VQA-v2; GQA; VisWiz; SQA<sup>I</sup>: ScienceQA-IMG; VQA<sup>T</sup>: TextVQA; POPE; MME<sup>P</sup>: MME-Perception; MMB: MMBench (dev); MMB<sup>CN</sup>: MMBench-Chinese (dev); MM-Vet . *: The training images of the datasets are observed during training. The compared LMMs are first categorized into the normal-sized and lightweight groups using a cut-off of 6B. Among the lightweight LMMs, we further categorize them into three groups based on their model size. Within each group of the lightweight LMMs, the best result on each benchmark is <b>bold</b>.
         </div>
-        We apply these design choices to different lightweight LLMs, namely, Qwen-1.5 (1.8B), Phi-2 (2.7B), and Phi-3 (3.8B), to obtain a family of lightweight LMMs Imp-2B/3B/4B. We compare Imp models with state-of-the-art models on 10 commonly-used benchmarks.
-        Imp-3B and Imp-4B steadily outperform all the existing
-        lightweight LMMs on most benchmarks and even achieve competitive performance with LLaVA-
-        1.5-13B, reflecting the effectiveness of our elaborated model design. 
+       
         <!-- Moreover, compared with
         MiniCPM-V-3B, which uses over 300M training data, Imp-3B is much more data-efficient. This
         suggests that for lightweight LMMs, the quality of training data is more important than the
@@ -468,13 +488,15 @@
         
         <div>
           <!-- <a href="https://plotly.com/~lichunyuan24/1/?share_key=v4opE3TJpxqQ08RYsDD4iv" target="_blank" title="Plot 1" style="display: block; text-align: center;"> -->
-            <img id="painting_icon" width="98%" src="images/tab5.png">
+            <p>We conduct experiments of running Imp-3B on different hardware platforms, especially mobile devices. We explore the techniques of model quantization and image resolution reduction. To summarize,
+            Imp-3B@196 with 4-bit quantization achieves a good balance in model storage,
+             latency, and capability. We regard it as our default model for the deployment.</p>
+            <img id="painting_icon" width="99%" src="images/tab5.png">
+            Table 3. Latency and performance comparisons of MobileVLM-3B@336, Imp-3B@384 and Imp-3B@196 on different hardware platforms and quantization precision. All models are evaluated using llama.cpp framework with 16/8/4-bit quantilization precision. SD denotes the Snapdragon mobile chip from Qualcomm. 𝑇<sub>VE</sub>  indicates the visual encoding time. 𝑆<sub>prompt</sub> and 𝑆<sub>gen</sub> measure the speed (tokens/s) of the prompt encoding and response generation stages, repetitively. 𝑇<sub>𝑡𝑜𝑡𝑎𝑙</sub> refers to the entire latency to infer one sample.
           </a>
           <script data-plotly="lichunyuan24:1" sharekey-plotly="v4opE3TJpxqQ08RYsDD4iv" src="https://plotly.com/embed.js" async></script>
       </div>
-      We conduct experiments of running Imp-3B on different hardware platforms, especially mobile devices. We explore the techniques of model quantization and image resolution reduction. To summarize,
-           Imp-3B@196 with 4-bit quantization achieves a good balance in model storage,
-            latency, and capability. We regard it as our default model for the deployment.
+     
                 
       </div>
     </div>
@@ -508,6 +530,9 @@
                     <img id="teaser1" width="97%" src="images/fig3.png">
                     <img id="teaser2" width="97%" src="images/fig4.png">
                     <img id="teaser3" width="97%" src="images/fig5.png">
+                    <figcaption style="text-align: justify;">
+                      Figure 3. Not only does Imp showcase comprehensive skills such as code generation, math problem solving, Chinese conversation, camouflage perception, celebrity recognition, chart understanding, object grounding, and medical image understanding, but it also has failure cases, including the hard examples about dense object counting and long-text OCR.
+                    </figcaption>
                   </figure>
                 </div>
               </div>
@@ -540,9 +565,13 @@
                   <div class="column is-six-fifths"
                     style="display: flex; align-items: flex-start; justify-content: center;">
                     <!-- <img id="teaser" width="35%" src="images/cmp_ironing.png"> -->
-                    <figure style="text-align: center ;">
-                      <img id="teaser" width="77.3%" src="images/fig6a.png">
-                      <img id="teaser" width="21.5%" src="images/fig6b.jpg">
+                    <figure style="text-align: center ; width: 77.3% ">
+                      <img id="teaser" width="100%" src="images/fig6a.png">
+                      <figcaption>Figure 4. (a) ImpChat-Web</figcaption>
+                    </figure>
+                    <figure style="text-align: center ; width: 22.2%;"  >
+                      <img id="teaser" width="100%" src="images/fig6b.jpg">
+                      <figcaption>Figure 4. (b) ImpChat-Mobile</figcaption>
                     </figure>
                   </div>
                 </div>
