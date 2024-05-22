@@ -139,6 +139,7 @@
                 Models<br> for Mobile Devices </span></h1>
             <!-- <h3 class="title is-3 publication-title">Visual Instruction Tuning?</h3> -->
             <!-- <h5 class="subtitle is-5 publication-awards">NeurIPS 2023 (Oral)</h5> -->
+            <br>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <spam style="color:#c594d6;font-weight:normal;">Zhenwei Shao</span>,
@@ -165,11 +166,11 @@
                 <spam style="color:#c594d6;font-weight:normal;"> Jiajun Ding</spam>
               </span>
             </div>
-
+            <br>
             <div class="is-size-5 publication-authors">
               <span class="author-block"><b style="color:#c594d6; font-weight:normal">&#x25B6 </b>Vision-Language Group@Media Intelligence Lab (MILVLG), Hangzhou Dianzi University</b></span>
             </div>
-
+            <br>
             <div class="is-size-6 publication-authors">
               <span class="author-block"><sup>&#x2020</sup>Project lead</span>
             </div>
@@ -209,6 +210,7 @@
                     <span>arXiv</span>
                   </a>
                 </span>
+                &nbsp;&nbsp;
                 <span class="link-block">
                   <a href="https://github.com/MILVLG/imp" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
@@ -218,6 +220,7 @@
                     <span>Code</span>
                   </a>
                 </span>
+                &nbsp;&nbsp;
                 <span class="link-block">
                   <a href="https://huggingface.co/collections/MILVLG/imp-v15-664c07c27a71afa504f69cec" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
@@ -227,6 +230,7 @@
                     <span>Models</span>
                   </a>
                 </span>
+                &nbsp;&nbsp;
                 <span class="link-block">
                   <!-- <a href="https://xmbot.net/imp/" target="_blank" -->
                   <a href="https://xmbot.net/imp/" target="_blank"
@@ -239,6 +243,7 @@
                     <!-- <span>ImpChat</span> -->
                   </a>
                 </span>
+                &nbsp;&nbsp;
                 <span class="link-block">
                   <!-- <a href="https://xmbot.net/imp/" target="_blank" -->
                   <a href="https://github.com/MILVLG/mlc-imp" target="_blank"
@@ -492,7 +497,7 @@
             Imp-3B@196 with 4-bit quantization achieves a good balance in model storage,
              latency, and capability. We regard it as our default model for the deployment.</p>
             <img id="painting_icon" width="99%" src="images/tab5.png">
-            Table 3. Latency and performance comparisons of MobileVLM-3B@336, Imp-3B@384 and Imp-3B@196 on different hardware platforms and quantization precision. All models are evaluated using llama.cpp framework with 16/8/4-bit quantilization precision. SD denotes the Snapdragon mobile chip from Qualcomm. 𝑇<sub>VE</sub>  indicates the visual encoding time. 𝑆<sub>prompt</sub> and 𝑆<sub>gen</sub> measure the speed (tokens/s) of the prompt encoding and response generation stages, repetitively. 𝑇<sub>𝑡𝑜𝑡𝑎𝑙</sub> refers to the entire latency to infer one sample.
+            Table 3. Latency and performance comparisons of MobileVLM-3B@336, Imp-3B@384 and Imp-3B@196 on different hardware platforms and quantization precision. All models are evaluated using llama.cpp framework with 16/8/4-bit quantilization precision. SD denotes the Snapdragon mobile chip from Qualcomm. 𝑇<sub>VE</sub>  indicates the visual encoding time. 𝑆<sub>prompt</sub> and 𝑆<sub>gen</sub> measure the speed (tokens/s) of the prompt encoding and response generation stages, repetitively. 𝑇<sub>total</sub> refers to the entire latency to infer one sample.
           </a>
           <script data-plotly="lichunyuan24:1" sharekey-plotly="v4opE3TJpxqQ08RYsDD4iv" src="https://plotly.com/embed.js" async></script>
       </div>
@@ -528,10 +533,18 @@
                   <!-- <img id="teaser" width="35%" src="images/cmp_ironing.png"> -->
                   <figure style="text-align: center ;">
                     <img id="teaser1" width="97%" src="images/fig3.png">
+                    <figcaption class = "container is-max-desktop content" style="text-align: justify;">
+                      Figure 3. Comprehensive skill demonstrations of Imp, including code generation, math problem solving, Chinese conversation, and medical image understanding.
+                    </figcaption>
+                    <br>
                     <img id="teaser2" width="97%" src="images/fig4.png">
+                    <figcaption class = "container is-max-desktop content" style="text-align: justify;">
+                      Figure 4. More diverse skill demonstrations of Imp, including camouflage perception, celebrity recognition, chart understanding, and object grounding.
+                    </figcaption>
+                    <br>
                     <img id="teaser3" width="97%" src="images/fig5.png">
-                    <figcaption style="text-align: justify;">
-                      Figure 3. Not only does Imp showcase comprehensive skills such as code generation, math problem solving, Chinese conversation, camouflage perception, celebrity recognition, chart understanding, object grounding, and medical image understanding, but it also has failure cases, including the hard examples about dense object counting and long-text OCR.
+                    <figcaption class = "container is-max-desktop content" style="text-align: justify;">
+                      Figure 5. Failure cases of Imp, including the hard examples about dense object counting, and long-text OCR.
                     </figcaption>
                   </figure>
                 </div>
@@ -567,11 +580,11 @@
                     <!-- <img id="teaser" width="35%" src="images/cmp_ironing.png"> -->
                     <figure style="text-align: center ; width: 77.3% ">
                       <img id="teaser" width="100%" src="images/fig6a.png">
-                      <figcaption>Figure 4. (a) ImpChat-Web</figcaption>
+                      <figcaption>Figure 6. (a) ImpChat-Web</figcaption>
                     </figure>
                     <figure style="text-align: center ; width: 22.2%;"  >
                       <img id="teaser" width="100%" src="images/fig6b.jpg">
-                      <figcaption>Figure 4. (b) ImpChat-Mobile</figcaption>
+                      <figcaption>Figure 6. (b) ImpChat-Mobile</figcaption>
                     </figure>
                   </div>
                 </div>
@@ -604,10 +617,26 @@
       <pre><code>
 @article{imp2024,
   title={Imp: Highly Capable Large Multimodal Models for Mobile Devices},
-  author={Shao, Zhenwei and Yu, Zhou and Yu, Jun and Ouyang, Xuecheng and Lihao, Zheng and Zhenbiao, Gai and Mingyang, Wang and Jiajun, Ding},
+  author={Shao, Zhenwei and Yu, Zhou and Yu, Jun and Ouyang, Xuecheng and Zheng, Lihao and Gai, Zhenbiao and Wang, Mingyang and Ding, Jiajun},
   journal={arXiv preprint arXiv:2405.12107},
   year={2024}
 }
+<!-- @misc{shao2024imp,
+  title={Imp: Highly Capable Large Multimodal Models for Mobile Devices}, 
+  author={Zhenwei Shao and Zhou Yu and Jun Yu and Xuecheng Ouyang and Lihao Zheng and Zhenbiao Gai and Mingyang Wang and Jiajun Ding},
+  year={2024},
+  eprint={2405.12107},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+} -->
+<!-- @misc{shao2024imp,
+  title={Imp: Highly Capable Large Multimodal Models for Mobile Devices}, 
+  author={Shao Zhenwei and Yu Zhou and Yu Jun and Ouyang Xuecheng and Zheng Lihao and Gai Zhenbiao and Wang Mingyang and Ding Jiajun },
+  year={2024},
+  eprint={2405.12107},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+} -->
   </code></pre>
     </div>
     <br>
